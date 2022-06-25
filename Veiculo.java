@@ -1,5 +1,7 @@
 package abstracao;
 
+import java.util.Scanner;
+
 public class Veiculo {
 	int ano;
 	String modelo, cor;
@@ -13,27 +15,30 @@ public class Veiculo {
 		this.cor = cor;
 		this.quilometragem = quilometragem;
 	}
-	void exibirInfo() {
+	
+	void infoCar() {
 		System.out.println("Ano: " +ano);	
 		System.out.println("Modelo: " +modelo);
 		System.out.println("Cor: " +cor);	
 		System.out.println("Quilometragem: " +quilometragem);
 	}
-
+	
 	void verificarManutencao() {
 		if (quilometragem < 25000) {
 			System.out.println("Tudo ok!");
 		}else {
 			if ((quilometragem >= 25000) && (quilometragem < 75000)) {
-				System.out.println("Realizar revisão parcial!");
+				System.out.println("Realizar revisÃ£o parcial!");
 			}else {
-				System.out.println("Realizar revisão completa!");
+				System.out.println("Realizar revisÃ£o completa!");
 			}
 		}
 	}
 	
 	void mudarCor() {
-		System.out.println(cor);
+		Scanner ler = new Scanner(System.in);
+		System.out.println("Para qual cor quer mudar: ");
+		cor = ler.nextLine();
 	}
 	void exibirCor() {
 		System.out.println("Cor atual: " +cor);
